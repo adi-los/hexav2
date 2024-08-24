@@ -1,0 +1,19 @@
+rancher:
+  endpoint: "https://10.0.0.21/v3"
+  secret_token: "token-6q4pt:9hcxr8lxhhdmpr7ph9h5hgz24flh5szbf6wdtjwfllsj74vmkmlzdf"
+  password: "KVM"
+  user: "root"
+
+
+
+libvirt:
+  images_dir: "/var/lib/libvirt/images"
+
+
+
+
+vms:
+  templates_path: "config/templates/"
+
+
+

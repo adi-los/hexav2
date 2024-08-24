@@ -1,0 +1,40 @@
+stages:
+  - build
+
+variables:
+  DOCKER_REGISTRY: "dev-winu.artifact.winu.fr"
+  IMAGE_NAME: "api"
+  IMAGE_VERSION: "0.0.2"
+
+build:
+  stage: build
+  image:
+    name: docker:latest  # Ensure you are using a Docker image with package management capabilities
+
+  script:
+    # Install the ca-certificates package
+    - apt-get update && apt-get install -y ca-certificates  # For Alpine-based images (default in many Docker images)
+    # If using a Debian/Ubuntu-based image, replace the above line with:
+    # - apt-get update && apt-get install -y ca-certificates
+
+    # Copy the certificate to the CA trust directory
+    - cp registry-cert.pem /etc/ssl/certs/
+
+    # Update CA trust
+    - update-ca-certificates  # Adjust command for your environment
+
+    # Change permissions on the CA trust directory
+    - chmod 777 /etc/ssl/certs/
+
+    # Start Docker daemon
+    - dockerd &
+    - sleep 11
+    
+    # Build the Docker image with the updated version
+    - docker build -t "$DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_VERSION" .
+
+    # Push the Docker image with the updated version
+    - docker push "$DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_VERSION"
+
+  tags:
+    - gitlab-runner-front

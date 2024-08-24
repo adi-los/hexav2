@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "vm_api"
+version = "0.1.0"
+description = "Hexagonal Arch"
+authors = ["Adil"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+sqlalchemy = "^2.0.32"
+psycopg2-binary = "^2.9.9"
+alembic = "^1.13.2"
+libvirt-python = "^10.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
