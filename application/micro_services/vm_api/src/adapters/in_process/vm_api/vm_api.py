@@ -12,7 +12,7 @@ from adapters.out_process.virt.virt_adapter import VirtInstallVMFetcher
 from fastapi import APIRouter
 from dotenv import load_dotenv
 import requests
-from dommon.fetchTemplate import fetchTemplate
+from common.fetchTemplate import fetchTemplate
 from common.http_utils import fetch_json
 from dotenv import load_dotenv
 import os
