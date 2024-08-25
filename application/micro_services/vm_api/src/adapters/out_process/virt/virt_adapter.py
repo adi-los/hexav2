@@ -3,11 +3,11 @@ import os
 import libvirt
 import xml.etree.ElementTree as ET
 from fastapi import HTTPException
-from application.ports.vm_ports.vm_creator import VMCreatorPort
-from domain.models.vm_models.vm_model import VMCreateRequest
-from application.ports.vm_ports.vm_remover import VMRemoverPort
-from application.ports.vm_ports.vm_fetcher import VMFetcherPort
-from domain.models.vm_models.vm_details import VMDetailedInfo
+from application.micro_services.vm_api.src.application.ports.vm_ports.vm_creator import VMCreatorPort
+from application.micro_services.vm_api.src.domain.models.vm_models.vm_model import VMCreateRequest
+from application.micro_services.vm_api.src.application.ports.vm_ports.vm_remover import VMRemoverPort
+from application.micro_services.vm_api.src.application.ports.vm_ports.vm_fetcher import VMFetcherPort
+from application.micro_services.vm_api.src.domain.models.vm_models.vm_details import VMDetailedInfo
 
 class VirtInstallVMCreator(VMCreatorPort):
     def __init__(self, templates_dir: str):

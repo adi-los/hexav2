@@ -1,4 +1,4 @@
-from application.ports.vm_ports.vm_remover import VMRemoverPort
+from application.micro_services.vm_api.src.application.ports.vm_ports.vm_remover import VMRemoverPort
 
 class RemoveVMUseCase:
     def __init__(self, vm_remover: VMRemoverPort):

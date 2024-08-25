@@ -1,7 +1,7 @@
 # src/application/services/vm_services/get_vm.py
 
-from domain.models.vm_models.vm_details import VMDetailedInfo
-from application.ports.vm_ports.vm_fetcher import VMFetcherPort  # Import the port interface
+from application.micro_services.vm_api.src.domain.models.vm_models.vm_details import VMDetailedInfo
+from application.micro_services.vm_api.src.application.ports.vm_ports.vm_fetcher import VMFetcherPort  # Import the port interface
 
 class GetVMUseCase:
     def __init__(self, vm_getter: VMFetcherPort):  # Use the port interface here

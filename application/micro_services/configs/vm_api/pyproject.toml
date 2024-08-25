@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "fetch-json"
+name = "vm-api"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
@@ -7,7 +7,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-requests = "^2.32.3"
+sqlalchemy = "^2.0.32"
+psycopg2-binary = "^2.9.9"
+alembic = "^1.13.2"
+libvirt-python = "^10.6.0"
+common = {path = "../../../utils/common/dist/common-0.1.0-py3-none-any.whl"}
 
 
 [build-system]

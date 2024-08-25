@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from domain.models.rancher_models.cluster import CreateClusterRequest
+from application.micro_services.rancher_api.src.domain.models.rancher_models.cluster import CreateClusterRequest
 
 class ClusterCreatorPort(ABC):
     @abstractmethod

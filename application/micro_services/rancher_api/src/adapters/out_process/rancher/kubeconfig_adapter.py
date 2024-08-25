@@ -2,8 +2,8 @@
 import requests
 import paramiko
 from fastapi import HTTPException
-from application.ports.rancher_ports.kubeconfig import KubeConfigPort
-from domain.models.rancher_models.kubeconfig import KubeConfigRequest, KubeConfigResponse
+from application.micro_services.rancher_api.src.application.ports.rancher_ports.kubeconfig import KubeConfigPort
+from application.micro_services.rancher_api.src.domain.models.rancher_models.kubeconfig import KubeConfigRequest, KubeConfigResponse
 
 class KubeConfigAdapter(KubeConfigPort):
     def __init__(self, api_endpoint: str, access_token: str):

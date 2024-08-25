@@ -1,6 +1,6 @@
 # src/application/ports/kubeconfig.py
 from abc import ABC, abstractmethod
-from domain.models.rancher_models.kubeconfig import KubeConfigRequest, KubeConfigResponse
+from application.micro_services.rancher_api.src.domain.models.rancher_models.kubeconfig import KubeConfigRequest, KubeConfigResponse
 
 class KubeConfigPort(ABC):
     @abstractmethod

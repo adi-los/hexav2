@@ -1,6 +1,6 @@
 # src/application/services/kubeconfig_service.py
-from application.ports.rancher_ports.kubeconfig import KubeConfigPort
-from domain.models.rancher_models.kubeconfig import KubeConfigRequest, KubeConfigResponse
+from application.micro_services.rancher_api.src.application.ports.rancher_ports.kubeconfig import KubeConfigPort
+from application.micro_services.rancher_api.src.domain.models.rancher_models.kubeconfig import KubeConfigRequest, KubeConfigResponse
 
 class KubeConfigService:
     def __init__(self, kubeconfig_port: KubeConfigPort):

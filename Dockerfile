@@ -20,12 +20,12 @@ COPY utils/common/dist/common-0.1.0-py3-none-any.whl /app/utils/common/dist/
 RUN pip install --upgrade pip \
     && pip install poetry \
     && cd /app/application/micro_services/rancher_api && poetry add /app/utils/common/dist/common-0.1.0-py3-none-any.whl \
-    && poetry install --no-dev \
-    && cd /app/application/micro_services/vm_api && poetry add /app/utils/common/dist/common-0.1.0-py3-none-any.whl \
+    && cd /app/application/micro_services/vm_api && poetry add /root/hexav2/application/micro_services/configs/vm_api/dist/vm_api-0.1.0-py3-none-any.whl \
+    && cd /app/application/micro_services/vm_api && poetry add /root/hexav2/application/micro_services/configs/rancher_api/dist/rancher_api-0.1.0-py3-none-any.whl \
     && poetry install --no-dev
 
 # Run Alembic migrations in vm_api
-RUN cd /app/application/micro_services/vm_api \
+RUN cd /app/application/micro_services/vm_api/alembic \
     && alembic revision --autogenerate -m "first migration" \
     && alembic upgrade head
 

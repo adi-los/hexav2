@@ -2,12 +2,12 @@
 
 
 from fastapi import APIRouter, Depends, HTTPException
-from domain.models.rancher_models.cluster import CreateClusterRequest
-from domain.models.rancher_models.node import NodeRegistrationRequest
-from domain.models.rancher_models.kubeconfig import KubeConfigRequest
-from dommon.fetchTemplate import fetchTemplate
+from application.micro_services.rancher_api.src.domain.models.rancher_models.cluster import CreateClusterRequest
+from application.micro_services.rancher_api.src.domain.models.rancher_models.node import NodeRegistrationRequest
+from application.micro_services.rancher_api.src.domain.models.rancher_models.kubeconfig import KubeConfigRequest
+from common.fetchTemplate import fetchTemplate
 from common.http_utils import fetch_json
-from domain.services.rancher_injection.service import cluster_svc, node_svc, kubeconfig_svc
+from application.micro_services.rancher_api.src.domain.services.rancher_injection.service import cluster_svc, node_svc, kubeconfig_svc
 import requests
 
 router = APIRouter()

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = "Main Folder"
+authors = ["Adil"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+vm-api = {path = "../micro_services/configs/vm_api/dist/vm_api-0.1.0-py3-none-any.whl"}
+rancher-api = {path = "../micro_services/configs/rancher_api/dist/rancher_api-0.1.0-py3-none-any.whl"}
+python-dotenv = "^1.0.1"
+common = {path = "../../utils/common/dist/common-0.1.0-py3-none-any.whl"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

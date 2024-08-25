@@ -1,6 +1,6 @@
 # src/application/services/node_service.py
-from application.ports.rancher_ports.node_registration import NodeRegistrationPort
-from domain.models.rancher_models.node import NodeRegistrationRequest
+from application.micro_services.rancher_api.src.application.ports.rancher_ports.node_registration import NodeRegistrationPort
+from application.micro_services.rancher_api.src.domain.models.rancher_models.node import NodeRegistrationRequest
 
 class NodeService:
     def __init__(self, node_registration_port: NodeRegistrationPort):

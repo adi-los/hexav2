@@ -5,8 +5,8 @@ from alembic import context
 
 # Import your SQLAlchemy models here
 sys.path.append('/var/create-vm-api/src')
-from infrastructure.external.models import Base
-from infrastructure.config.database import DATABASE_URL
+from application.micro_services.vm_api.src.infrastructure.external.models import Base
+from application.micro_services.vm_api.src.infrastructure.config.database import DATABASE_URL
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG,

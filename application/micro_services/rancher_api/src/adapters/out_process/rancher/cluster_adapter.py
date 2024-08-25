@@ -1,7 +1,7 @@
 import requests
 from fastapi import HTTPException
-from application.ports.rancher_ports.cluster_creator import ClusterCreatorPort
-from domain.models.rancher_models.cluster import CreateClusterRequest
+from application.micro_services.rancher_api.src.application.ports.rancher_ports.cluster_creator import ClusterCreatorPort
+from application.micro_services.rancher_api.src.domain.models.rancher_models.cluster import CreateClusterRequest
 
 class ClusterCreatorAdapter(ClusterCreatorPort):
     def __init__(self, api_endpoint: str, access_token: str):

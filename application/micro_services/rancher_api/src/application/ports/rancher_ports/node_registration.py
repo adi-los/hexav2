@@ -1,6 +1,6 @@
 # src/application/ports/node_registration.py
 from abc import ABC, abstractmethod
-from domain.models.rancher_models.node import NodeRegistrationRequest
+from application.micro_services.rancher_api.src.domain.models.rancher_models.node import NodeRegistrationRequest
 
 class NodeRegistrationPort(ABC):
     @abstractmethod

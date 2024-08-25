@@ -2,8 +2,8 @@
 import requests
 import paramiko
 from fastapi import HTTPException
-from application.ports.rancher_ports.node_registration import NodeRegistrationPort
-from domain.models.rancher_models.node import NodeRegistrationRequest
+from application.micro_services.rancher_api.src.application.ports.rancher_ports.node_registration import NodeRegistrationPort
+from application.micro_services.rancher_api.src.domain.models.rancher_models.node import NodeRegistrationRequest
 
 class NodeRegistrationAdapter(NodeRegistrationPort):
     def __init__(self, api_endpoint: str, access_token: str):

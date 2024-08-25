@@ -1,6 +1,6 @@
 # src/application/use_cases/create_vm.py
-from domain.models.vm_models.vm_model import VMCreateRequest
-from application.ports.vm_ports.vm_creator import VMCreatorPort
+from application.micro_services.vm_api.src.domain.models.vm_models.vm_model import VMCreateRequest
+from application.micro_services.vm_api.src.application.ports.vm_ports.vm_creator import VMCreatorPort
 
 class CreateVMUseCase:
     def __init__(self, vm_creator: VMCreatorPort):

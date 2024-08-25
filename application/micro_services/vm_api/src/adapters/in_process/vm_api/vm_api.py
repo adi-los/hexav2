@@ -1,31 +1,29 @@
 
 # src/adapters/in/api.py
 from fastapi import HTTPException, APIRouter
-from domain.models.vm_models.vm_model import VMCreateRequest
-from application.services.vm_services.create_vm import CreateVMUseCase
-from application.services.vm_services.remove_vm import RemoveVMUseCase
-from adapters.out_process.virt.virt_adapter import VirtInstallVMCreator
-from adapters.out_process.virt.virt_adapter import VirtInstallVMRemover
-from domain.models.vm_models.vm_details import VMDetailedInfo
-from application.services.vm_services.get_vm import GetVMUseCase
-from adapters.out_process.virt.virt_adapter import VirtInstallVMFetcher 
+from application.micro_services.vm_api.src.domain.models.vm_models.vm_model import VMCreateRequest
+from application.micro_services.vm_api.src.application.services.vm_services.create_vm import CreateVMUseCase
+from application.micro_services.vm_api.src.application.services.vm_services.remove_vm import RemoveVMUseCase
+from application.micro_services.vm_api.src.adapters.out_process.virt.virt_adapter import VirtInstallVMCreator
+from application.micro_services.vm_api.src.adapters.out_process.virt.virt_adapter import VirtInstallVMRemover
+from application.micro_services.vm_api.src.domain.models.vm_models.vm_details import VMDetailedInfo
+from application.micro_services.vm_api.src.application.services.vm_services.get_vm import GetVMUseCase
+from application.micro_services.vm_api.src.adapters.out_process.virt.virt_adapter import VirtInstallVMFetcher 
 from fastapi import APIRouter
-from dotenv import load_dotenv
 import requests
 from common.fetchTemplate import fetchTemplate
 from common.http_utils import fetch_json
-from dotenv import load_dotenv
 import os
 from pathlib import Path
 
-# Define the relative path to your .env file
-env_path = Path('config/vars/.env')
+from environs import Env
 
-# Load the .env file
-load_dotenv(dotenv_path=env_path)
+env = Env()
+env.read_env(path='/root/hexav2/application/micro_services/vm_api/src/config/vars/.env')  # Specify the path to the .env file
 
-images_dir = os.getenv("IMAGES_DIR")
-templates_dir = os.getenv("TEMPLATES_PATH")
+images_dir = env.str('IMAGES_DIR')
+
+templates_dir = env.str('TEMPLATES_PATH')
 
 router = APIRouter()
 
