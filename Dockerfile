@@ -36,4 +36,4 @@ EXPOSE 8000
 ENV NAME SkyCloud
 
 # Run uvicorn in the app directory when the container launches
-CMD ["sh", "-c", "cd app && poetry run uvicorn main:app --host 0.0.0.0 --port 8000"]
+CMD ["sh", "-c", "cd app/application/app && poetry run uvicorn main:app --host 0.0.0.0 --port 8000"]
